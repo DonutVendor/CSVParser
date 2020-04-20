@@ -9,7 +9,7 @@ make
 ```
 View a test of this program in action with the included example
 ```
-./main < test.csv
+./csvParser < test.csv
 ```
 
 ### Usage
