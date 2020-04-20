@@ -1,11 +1,8 @@
 /*
- * SinglyLinkedList.c - Linked list source for storing and retrieving team info
+ * SinglyLinkedList.c - Linked list source for storing and retrieving stored info at runtime
  *
  * Originator: Narasimha Karumanchi
  * Author:  Devon Mickels
- *
- * This is the source code file that for functionality specific to the Team Info database that
- * is part of an ECE 361 homework assignment.
  *
  * This file, and its associated header file (including the functions that you
  * need to provide) are meant to be to provide a Linked List to your main()
@@ -49,10 +46,10 @@ int singlyListLength(LinkedListPtr_t list){
 }
 
 /**
- * Inserts a team struct into the linked list
+ * Inserts a string into the linked list
  *
  * @param list      (pointer to linked list) of the list you want to insert information
- * @param data      (pointer to team data) of the data you want to insert
+ * @param data      (pointer to string) of the data you want to insert
  * @param pos       (int) of the position in the list you want to insert to
  *
  */
@@ -65,7 +62,6 @@ void insertInSinglyLinkedList(LinkedListPtr_t list, char *data, int pos){
 		printf("Memory Error\n");
 		return;
 	}
-	//newNode->data=data;
 	newNode->data = malloc(strlen(data) * sizeof(char));
 	strcpy(newNode->data, data);
 	p=head;
@@ -120,12 +116,12 @@ void deleteNodeFromLinkedList(LinkedListPtr_t list, int pos){
 }
 
 /**
- * Returns a pointer to a team info struct given the position in the linked list.
+ * Returns a pointer to a string of the value stored at the given index.
  *
  * @param list      (pointer to linked list) of the list you want to get from
  * @param pos       (int) of the position in the list you want to get
  *
- * @returns         (pointer to team struct) of the information at that point
+ * @returns         (pointer to string) of the information at that point
  */
 const char* getFromList(ListNodePtr_t list, int pos){
   if(pos == 0)
